@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:itcast="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/graye5"
+              android:orientation="vertical" >
+
+    <include layout="@layout/titlebar" />
+    <!-- android:background="@drawable/smsbackup_buuton_bg" -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
+
+        <com.example.yuemosafe.activity.advancedtools.widget.MyCircleProgress
+            android:id="@+id/mcp_reducition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/smsbackup_button_bg"
+            android:gravity="center"
+            android:text="一键还原"
+            android:textColor="@color/white"
+            itcast:circleColor="@color/bright_red"
+            itcast:progressColor="@color/light_pink"/>
+    </LinearLayout>
+
+</LinearLayout>

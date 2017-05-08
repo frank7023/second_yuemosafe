@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义AdvancedToolsView中的两个属性-->
+    <declare-styleable name="AdvancedToolsView">
+        <attr name="desc" format="string"/>
+        <attr name="android:src"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyCircleProgress">
+        <attr name="progress" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="circleColor" format="color" />
+        <attr name="progressColor" format="color"/>
+        <attr name="android:background"/>
+    </declare-styleable>
+
+    <declare-styleable name="SettingView">
+        <attr name="settitle" format="string"/>
+        <attr name="status_on" format="string"/>
+        <attr name="status_off" format="string"/>
+        <attr name="status_ischecked" format="boolean"/>
+    </declare-styleable>
+</resources>

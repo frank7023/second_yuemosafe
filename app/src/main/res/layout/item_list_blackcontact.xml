@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#10000000"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/view_black_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="15dp"
+        android:background="@drawable/brightpurple_contact_icon" />
+
+    <TextView
+        android:id="@+id/tv_black_name"
+        style="@style/textview14sp"
+        android:layout_alignTop="@+id/view_black_icon"
+        android:layout_toRightOf="@+id/view_black_icon"
+        android:textColor="@color/purple" />
+    <TextView
+        android:id="@+id/tv_black_mode"
+        style="@style/textview14sp"
+        android:layout_toRightOf="@+id/view_black_icon"
+        android:layout_below="@+id/tv_black_name"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/purple" />
+    
+      <View
+        android:id="@+id/view_black_delete"
+        android:layout_width="34dp"
+        android:layout_height="40dp"
+        android:background="@drawable/delete_icon"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

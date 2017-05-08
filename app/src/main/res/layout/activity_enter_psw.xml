@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:gravity="center" >
+
+    <ImageView
+        android:id="@+id/imgv_appicon_enterpsw"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/tv_appname_enterpsw"
+        style="@style/wrapcontent"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:textColor="@color/dark_gray"
+        android:textScaleX="1.2"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_enterpsw"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:background="@drawable/coner_white_rec">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@drawable/enterpsw_icon"/>
+        <EditText
+            android:id="@+id/et_psw_enterpsw"
+            android:layout_width="match_parent"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:hint="请输入防盗密码"
+            android:inputType="textPassword"
+            android:background="@null"/>
+        <ImageView
+            android:id="@+id/imgv_go_enterpsw"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@drawable/go_greenicon"/>
+    </LinearLayout>
+
+</LinearLayout>

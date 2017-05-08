@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="100"
+        android:orientation="vertical" >
+
+        <include layout="@layout/titlebar" />
+
+        <LinearLayout
+            style="@style/wrapcontent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/operator_set_info_incon" />
+
+            <TextView
+                style="@style/textview16sp"
+                android:layout_marginLeft="15dp"
+                android:lineSpacingMultiplier="1.5"
+                android:text="@string/_operatorset_string"
+                android:textColor="@color/black"
+                android:textScaleX="1.1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/textview16sp"
+                android:text="运营商选择" />
+
+            <Spinner
+                android:id="@+id/spinner_operator_select"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/operator_spinner_bg"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_operator_finish"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_weight="10"
+        android:background="@drawable/operator_finish_bg_selector" />
+</LinearLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.yuemosafe">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+
+    <application
+        android:name=".activity.main.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.main.SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.main.HomeActivity">
+        </activity>
+        <activity android:name=".activity.securityphone.SecurityPhoneActivity">
+        </activity>
+        <activity android:name=".activity.appmanager.AppManagerActivity">
+        </activity>
+        <activity android:name=".activity.scanvirus.VirusScanActivity">
+        </activity>
+        <activity android:name=".activity.cacheclear.CacheClearListActivity">
+        </activity>
+        <activity android:name=".activity.progressmanager.ProcessManagerActivity">
+        </activity>
+        <activity android:name=".activity.trafficmonitoring.TrafficMonitoringActivity">
+        </activity>
+        <activity android:name=".activity.advancedtools.AdvancedToolsActivity">
+        </activity>
+        <activity android:name=".activity.settings.SettingsActivity">
+        </activity>
+        <activity android:name=".activity.lost.ContactSelectActivity">
+        </activity>
+        <activity android:name=".activity.lost.LostFindActivity">
+        </activity>
+        <activity android:name=".activity.lost.SetUp1Activity">
+        </activity>
+        <activity android:name=".activity.lost.SetUp2Activity">
+        </activity>
+        <activity android:name=".activity.lost.SetUp3Activity">
+        </activity>
+        <activity android:name=".activity.lost.SetUp4Activity">
+        </activity>
+
+        <!-- 超级管理员权限 -->
+        <activity android:name=".activity.securityphone.ContactSelectActivity"/>
+
+        <receiver
+            android:name=".activity.lost.service.MyDeviceAdminReciever"
+            android:description="@string/sample_device_admin_description"
+            android:label="@string/sample_device_admin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_sample"/>
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".activity.lost.broadcastreceiver.SmsLostFindReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- android:persistent="true"代表不会被杀死或者杀死之后自动重启 -->
+        <service
+            android:name=".activity.lost.service.GPSLocationService"
+            android:enabled="true"
+            android:persistent="true">
+        </service>
+        <service
+            android:name=".activity.lost.service.AlarmService"
+            android:enabled="true"
+            android:exported="false">
+        </service>
+
+        <activity android:name=".activity.securityphone.AddBlackNumberActivity">
+        </activity>
+
+        <!-- 拦截黑名单信息 -->
+        <receiver android:name=".activity.securityphone.receiver.InterceptSmsReciever">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <!-- 拦截黑名单电话 -->
+        <receiver android:name=".activity.securityphone.receiver.InterceptCallReciever">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.PHONE_STATE"/>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.scanvirus.VirusScanSpeedActivity">
+        </activity>
+        <activity android:name=".activity.cacheclear.CleanCacheActivity">
+        </activity>
+        <activity android:name=".activity.progressmanager.ProcessManagerSettingActivity">
+        </activity>
+
+        <service
+            android:name=".activity.progressmanager.service.AutoKillProcessService"
+            android:enabled="true"
+            android:exported="false"
+            android:persistent="true">
+        </service>
+
+        <activity android:name=".activity.trafficmonitoring.OperatorSetActivity">
+        </activity>
+
+        <service
+            android:name=".activity.trafficmonitoring.service.TrafficMonitoringService"
+            android:enabled="true"
+            android:exported="true"
+            android:persistent="true">
+        </service>
+
+        <receiver
+            android:name=".activity.trafficmonitoring.receiver.BootCompleteReciever"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.advancedtools.AppLockActivity">
+        </activity>
+        <activity android:name=".activity.advancedtools.NumBelongtoActivity">
+        </activity>
+        <activity android:name=".activity.advancedtools.SMSBackupActivity">
+        </activity>
+        <activity android:name=".activity.advancedtools.SMSReducitionActivity">
+        </activity>
+
+        <service
+            android:name=".activity.advancedtools.service.AppLockService"
+            android:enabled="true"
+            android:exported="true"
+            android:persistent="true">
+        </service>
+
+        <activity android:name=".activity.advancedtools.EnterPswActivity">
+        </activity>
+    </application>
+
+</manifest>
